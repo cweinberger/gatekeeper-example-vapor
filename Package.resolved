@@ -42,7 +42,7 @@
         "repositoryURL": "https://github.com/nodes-vapor/gatekeeper.git",
         "state": {
           "branch": "feature/migrate-to-vapor-3",
-          "revision": "2a46c3e7ef7d0d9c636bfb23839b5e42679a4c45",
+          "revision": "f268cd5ac507e6e02b7050889e01c010fc37158f",
           "version": null
         }
       },
