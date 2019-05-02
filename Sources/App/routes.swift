@@ -1,4 +1,5 @@
 import Vapor
+import Gatekeeper
 
 /// Register your application's routes here.
 public func routes(_ router: Router) throws {
@@ -12,9 +13,8 @@ public func routes(_ router: Router) throws {
         return "Hello, world!"
     }
 
-    // Example of configuring a controller
-    let todoController = TodoController()
-    router.get("todos", use: todoController.index)
-    router.post("todos", use: todoController.create)
-    router.delete("todos", Todo.parameter, use: todoController.delete)
+    let protectedRoutes = router.grouped(GatekeeperMiddleware.self)
+    protectedRoutes.get("protected/hello") { req in
+        return "Protected Hello, World!"
+    }
 }
